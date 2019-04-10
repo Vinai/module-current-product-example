@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var VinaiKopp\CurrentProductExample\ViewModel\CurrentProductExampleViewModel $currentProductViewModel */
+$currentProductViewModel = $block->getData('current_product')
+
+?>
+<div>
+    <div><?= __('Current Product Name: %1', $currentProductViewModel->getProductName()) ?></div>
+    <div><?= __('Current Product SKU: %1', $currentProductViewModel->getProductSku()) ?></div>
+</div>

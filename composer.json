@@ -1,0 +1,21 @@
+{
+    "name": "vinaikopp/module-current-product-example",
+    "description": "Example module using the current product on a product detail page avoiding deprecated types",
+    "require": {
+        "php": "^7.2.0",
+        "magento/module-catalog": "^100.0.0",
+        "magento/framework": "^102.0.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "BSD-3-Clause"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "VinaiKopp\\CurrentProductExample\\": ""
+        }
+    }
+}

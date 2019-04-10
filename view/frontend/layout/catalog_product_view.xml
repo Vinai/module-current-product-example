@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block name="current-product-example" template="VinaiKopp_CurrentProductExample::example.phtml">
+                <arguments>
+                    <argument name="current_product" xsi:type="object">VinaiKopp\CurrentProductExample\ViewModel\CurrentProductExampleViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
