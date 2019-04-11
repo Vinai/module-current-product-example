@@ -19,15 +19,11 @@ class CurrentProductExampleViewModel implements ArgumentInterface
 
     public function getProductName(): string
     {
-        $product = $this->currentProduct->get();
-
-        return $product ? $product->getName() : '';
+        return (string) $this->currentProduct->get()->getName();
     }
 
     public function getProductSku(): string
     {
-        $product = $this->currentProduct->get();
-
-        return $product ? $product->getSku() : '';
+        return (string) $this->currentProduct->get()->getSku();
     }
 }
