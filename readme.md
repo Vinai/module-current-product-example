@@ -5,7 +5,7 @@ product detail page in Magento without referencing deprecated code like the glob
 
 The product instance takes the following path until it reaches the template:  
 
-`Produt Helper -> Event -> Observer -> Custom Registry Object -> View Model -> Template`
+`Product Helper -> Event -> Observer -> Custom Registry Object -> View Model -> Template`
 
 
 1. The product is loaded by `\Magento\Catalog\Helper\Product::initProduct`.
@@ -29,7 +29,7 @@ The product instance takes the following path until it reaches the template:
 
 ## Why an event observer and not a plugin?
 
-instead of an event observer, the current product also could have been set
+Instead of an event observer, the current product also could have been set
 on the `CurrentProduct` instance with a plugin. But since `\Magento\Catalog\Helper\Product::initProduct` is not
 blessed with the `@api` annotation, a plugin would add a patch level dependency on the catalog module.
 By using the event only a major version dependency is created. 
@@ -66,7 +66,7 @@ Sure, just use deprecated code - it probably will continue to work for years to 
 ## Why not use `Registry\CurrentProduct` directly as the view model?
 
 That would be nice, but this doesn't work because all object block arguments
-are newly instantiated. They are not shared instances (via `ObjectManager::get()`),
+are newly instantiated. They are not shared instances (via `ObjectManager::get()`).
 This makes it impossible to use the view model directly, as the custom registry object
 only works because it is a shared instance.
 If we tried, a new `CurrentProduct` instance would be passed to the block class,
