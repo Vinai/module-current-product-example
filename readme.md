@@ -65,7 +65,7 @@ Sure, just use deprecated code - it probably will continue to work for years to 
 
 ## Why not use `Registry\CurrentProduct` directly as the view model?
 
-That would be nice, but this doesn't work because all object block arguments
+That would be nice, but this doesn't work for Magento versions under 2.3.2, because all object block arguments
 are newly instantiated. They are not shared instances (via `ObjectManager::get()`).
 This makes it impossible to use the view model directly, as the custom registry object
 only works because it is a shared instance.
