@@ -65,15 +65,14 @@ Sure, just use deprecated code - it probably will continue to work for years to 
 
 ## Why not use `Registry\CurrentProduct` directly as the view model?
 
-That would be nice, but this doesn't work for Magento versions under 2.3.2, because all object block arguments
+Since Magento 2.3.2 that works and I am totally going to do that.
+For backward compatibility with older vbersions that however is not possible, because there all object block arguments
 are newly instantiated. They are not shared instances (via `ObjectManager::get()`).
 This makes it impossible to use the view model directly, as the custom registry object
 only works because it is a shared instance.
-If we tried, a new `CurrentProduct` instance would be passed to the block class,
+In versions up to 2.3.1, if we tried, a new `CurrentProduct` instance would be passed to the block class,
 and it wouldn't contain the current product value which would have been set on the different 
 shared instance of the class.
-The only way to hack around this I'm aware of would be to use a static property, but
-then we might as well use a global variable already...
 
 
 ## Is this the right way to access the current product?
